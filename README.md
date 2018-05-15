@@ -1,1 +1,1 @@
-Contains code of my projects
+Branch s  contains code of suppergenerator.com
