@@ -131,9 +131,9 @@ public class Data extends JFrame  {
      try(Connection con = getConnection())
         {
             //Statement createStatement = con.createStatement();
-           String sql= ( "INSERT INTO supper_ing(supper,ingredient1, ingredient2, ingredient3,ingredient4,ingredient5)"+ "VALUES  (?,?,?,?,?,?)") ;
-           PreparedStatement preparedStatement = con.prepareStatement(sql);
-           String b=tf.getText(); 
+          String sql= ( "INSERT INTO supper_ing(supper,ingredient1, ingredient2, ingredient3,ingredient4,ingredient5)"+ "VALUES  (?,?,?,?,?,?)") ;
+          PreparedStatement preparedStatement = con.prepareStatement(sql);
+          String b=tf.getText(); 
 	  preparedStatement.setString(1, b);
 	  preparedStatement.setString(2, list[1].getText());
           preparedStatement.setString(3, list[2].getText());
