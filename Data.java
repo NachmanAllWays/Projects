@@ -135,11 +135,11 @@ public class Data extends JFrame  {
            PreparedStatement preparedStatement = con.prepareStatement(sql);
            String b=tf.getText(); 
 	  preparedStatement.setString(1, b);
-	 preparedStatement.setString(2, list[1].getText());
-     preparedStatement.setString(3, list[2].getText());
-      preparedStatement.setString(4, list[3].getText());
-       preparedStatement.setString(5, list[4].getText());
-        preparedStatement.setString(6, list[5].getText());
+	  preparedStatement.setString(2, list[1].getText());
+          preparedStatement.setString(3, list[2].getText());
+          preparedStatement.setString(4, list[3].getText());
+          preparedStatement.setString(5, list[4].getText());
+          preparedStatement.setString(6, list[5].getText());
           preparedStatement.executeUpdate();
             //createStatement.executeUpdate(sql);
            // 2,,list[1].getText(),list[2].getText(),list[3].getText(),list[4].getText(),list[5].getText()
@@ -160,11 +160,11 @@ public class Data extends JFrame  {
         {
             Statement createStatement = con.createStatement();
             String sql=("SELECT supper,ingredient1, ingredient2, ingredient3,ingredient4,ingredient5 FROM supper_ing");
-          ResultSet rs = createStatement.executeQuery(sql);
-          while(rs.next()){
-           String s=rs.getString("supper"); 
-           Supper data=new Supper(s,rs.getString("ingredient1"),rs.getString("ingredient2"),rs.getString("ingredient3"),rs.getString("ingredient4"),rs.getString("ingredient5"),true);
-        Supper.Add(data);
+            ResultSet rs = createStatement.executeQuery(sql);
+            while(rs.next()){
+            String s=rs.getString("supper"); 
+            Supper data=new Supper(s,rs.getString("ingredient1"),rs.getString("ingredient2"),rs.getString("ingredient3"),rs.getString("ingredient4"),rs.getString("ingredient5"),true);
+            Supper.Add(data);
           }
         } catch (ClassNotFoundException | SQLException ex)
         {
@@ -204,12 +204,12 @@ public class Data extends JFrame  {
 //           PreparedStatement preparedStatement = con.prepareStatement(sql);
 //           String b=tf.getText(); 
 //	  preparedStatement.setString(1, b);
-//	 preparedStatement.setString(2, list[1].getText());
-//     preparedStatement.setString(3, list[2].getText());
-//      preparedStatement.setString(4, list[3].getText());
-//       preparedStatement.setString(5, list[4].getText());
+//	  preparedStatement.setString(2, list[1].getText());
+//        preparedStatement.setString(3, list[2].getText());
+//        preparedStatement.setString(4, list[3].getText());
+//        preparedStatement.setString(5, list[4].getText());
 //        preparedStatement.setString(6, list[5].getText());
-//          preparedStatement.executeUpdate();
+//        preparedStatement.executeUpdate();
 //            //createStatement.executeUpdate(sql);
 //           // 2,,list[1].getText(),list[2].getText(),list[3].getText(),list[4].getText(),list[5].getText()
 //            System.out.println("Table updated.");
@@ -221,58 +221,3 @@ public class Data extends JFrame  {
 //        } 
    }
    
-//   public void writeDataOutputStream() {
-//        DataOutputStream dataOut = null;
-//        DataInputStream dataIn = null;
-//        try {
-//String a=tf.getText();
-//String b=list[1].getText();
-//String c=list[2].getText();
-//String d=list[3].getText();
-//String e=list[4].getText();
-//String f=list[5].getText();
-//            //Specify the file path here
-//            File file = new File("C:\\Users\\Nachman Rosen\\Documents\\NetBeansProjects\\supper\\supper.txt");
-//
-//            if (!file.exists()) {
-//                file.createNewFile();
-//            }
-//            FileOutputStream fw = new FileOutputStream(file);
-//            dataOut = new DataOutputStream(fw);
-//          
-//            dataOut.writeUTF(a);
-//            
-//            dataOut.writeUTF(b);
-//            
-//            dataOut.writeUTF(c);
-//           
-//            dataOut.writeUTF(d);
-//            
-//            dataOut.writeUTF(e);
-//            
-//            dataOut.writeUTF(f);
-//            System.out.println("File Written Successfully");
-//            //Reading data from the same file
-//            dataIn = new DataInputStream(new FileInputStream(file));
-//
-//            while (dataIn.available() > 0) {
-//
-//                String readUTF = dataIn.readUTF();
-//                Supper p=new Supper(readUTF,readUTF,readUTF,readUTF,readUTF,readUTF,true);
-//                Supper.Add(p);
-//                
-//            }
-//        } catch (FileNotFoundException ex) {
-//        } catch (IOException ex) {
-//        } finally {
-//            try {if (dataOut!=null){
-//                dataOut.close();
-//            }
-//                if (dataIn!=null){
-//                dataIn.close();
-//                }
-//            } catch (IOException ex) {
-//            }
-//        }
-//    }
-
