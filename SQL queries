@@ -1,0 +1,46 @@
+//remove textIn() (MS Access) query 
+UPDATE [Current Month] SET Field6 = LEFT([Field6],InStr([Field6],"(")-1)
+WHERE Instr([Field6],"(")>0;
+
+//Extract first name from fullname (MS Access)
+UPDATE [Current Month] SET [First Name] = MID([Field4],InStr([Field4]," "));
+
+//Extract last name (MS Access)
+UPDATE [Current Month] SET [Last Name] = LEFT([Field4],InStr([Field4]," ")-1)
+WHERE Instr([Field4]," ")>0;
+
+//Insert TherapistID (MS Access)
+UPDATE [Current Month] AS c LEFT JOIN Therapist AS t ON (c.[Field24]=t.[Therapist name]) AND (c.field6=t.[Service Name]) SET c.[Therapist ID] = t.[Therapist ID];
+
+//Add comma (MS Access)
+UPDATE [Current Month] SET Field24 = replace(Field24," ",", ",1);
+
+// Data Reconciliation (MS Access) of two tables, RERQ and cm. The first query is for units that match. The second query is for units //that don't match.
+//Field32 is the unit column in the cm table.
+UPDATE [Reconcling Elwyn 2018]  AS RERQ 
+INNER JOIN [Current Month] AS cm ON RERQ.[Therapist ID]=cm.[Therapist ID]
+AND RERQ.Discipline=cm.Discipline AND RERQ.[Service Date]=cm.Field8
+AND  (RERQ.[Last Name] & " " & RERQ.[First Name])=cm.Field4
+And CStr(Nz(Hour(RERQ.[End Time])))=cm.Field14 
+And CStr(Nz(Minute(RERQ.[End Time])))=cm.Field15 
+ SET [Elwyn Units]= Units, [Elwyn Paid]= TRUE
+WHERE RERQ.Units=cm.[Field32] And RERQ.[Elwyn Paid]=False;
+
+UPDATE [Reconcling Elwyn 2018]  AS RERQ 
+INNER JOIN [Current Month] AS cm ON RERQ.[Therapist ID]=cm.[Therapist ID]
+AND RERQ.Discipline=cm.Discipline AND RERQ.[Service Date]=cm.Field8
+AND  (RERQ.[Last Name] & " " & RERQ.[First Name])=cm.Field4
+And CStr(Nz(Hour(RERQ.[End Time])))=cm.Field14 
+And CStr(Nz(Minute(RERQ.[End Time])))=cm.Field15 
+ SET  [Elwyn Units]= cm.[Field32], [Elwyn Rejected]=(RERQ.Units-cm.[Field32])
+WHERE RERQ.Units <>cm.[Field32]
+
+//Find rows in table1 that don't match  the data in table2 and in those rows set column NoMatch to be true (MS Access)
+UPDATE [Current Month] AS cm LEFT JOIN [Reconcling Elwyn Report Query] AS RERQ 
+ON RERQ.[Service Date]=cm.Field8 And RERQ.[Therapist ID]=cm.[Therapist ID] And (RERQ.[Last Name] & " " & RERQ.[First Name])=cm.Field4 And CStr(Nz(Hour(RERQ.[End Time])))=cm.Field14 And CStr(Nz(Minute(RERQ.[End Time])))=cm.Field15 
+SET NoMatch = TRUE
+WHERE RERQ.[Service Date] IS NULL Or RERQ.[Therapist ID] Is NULL Or (RERQ.[Last Name] & " " & RERQ.[First Name]) IS NULL Or Hour(RERQ.[End Time]) IS NULL Or Minute(RERQ.[End Time]) IS NULL;
+
+//extract hour and minute from data field and convert to string to compare with text on a different table(MS Access)
+CStr(Nz(Hour(RERQ.[End Time])))=cm.Field14
+CStr(Nz(Minute (RERQ.[End Time])))=cm.Field15
