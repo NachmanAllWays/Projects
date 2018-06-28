@@ -1,3 +1,2 @@
-The ShoppingCart branch contains the code for the website: suppergenerator.com/Labels.
+The ShoppingCart branch contains the code for the site: http://suppergenerator.com/Labels
 
-Branch s  contains code of suppergenerator.com
