@@ -1,15 +1,11 @@
 <?php
-$cs = "mysql:host=localhost;dbname=suppers";
-    $user = "seforim";
-    $password = '1234';
-// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+//$cs = "mysql:host=localhost;dbname=suppers";
+    //$user = "seforim";
+    //$password = '1234';
 
-// $server = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $db = substr($url["path"], 1);
-// $cs = "mysql:host=.$server;dbname=.$db;
-
+$cs="mysql:host=us-cdbr-iron-east-03.cleardb.net;dbname=heroku_8ca11959726c535"
+$user="bed585af83e3c6"
+$password = "dccce2d4"
     
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
