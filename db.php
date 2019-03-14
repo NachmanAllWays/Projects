@@ -3,7 +3,7 @@
     //$user = "seforim";
     //$password = '1234';
 
-$cs="mysql:host=us-cdbr-iron-east-03.cleardb.net;dbname=heroku_8ca11959726c535"
+$cs="mysql:host=us-cdbr-iron-east-03.cleardb.net;dbname=heroku_772f7bcedc89412"
 $user="bed585af83e3c6"
 $password = "dccce2d4"
     
