@@ -61,7 +61,7 @@ if(isset($_POST['submit'])&&isset($ing1)){
   <head>
     <meta charset="utf-8">
     <title>supper form</title>
- <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+ <link href="bootstrap.min.css" rel="stylesheet"/>
  <style>
  body{
      background-color:lightblue;
