@@ -7,7 +7,7 @@
     <title>form</title>
  
  
- <link href="css/bootstrap.min.css" rel="stylesheet"/>
+ <link href="bootstrap.min.css" rel="stylesheet"/>
  <style>
    body{
      background-color:lightblue;
@@ -73,10 +73,10 @@
     
     
     <div id="P">
-<img src="images/o.jpg">
-<img src="images/Salad.jpg">  
-<img src="images/calzone.jpg">  
-  <img src="images/a1.jpg">
+<img src="o.jpg">
+<img src="th.jpg">  
+<img src="calzone.jpg">  
+  <img src="a1.jpg">
 </div>
 </body>
     </html>
