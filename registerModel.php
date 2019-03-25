@@ -28,7 +28,7 @@ try{ //first get freetrial from db.
         ?>
         <script>
             alert("Welcome to Supper Generator");
-           window.location.href ='home.php';
+           window.location.href ='index.php';
             </script>
             <?php
         
