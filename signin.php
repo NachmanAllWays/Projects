@@ -7,7 +7,7 @@ $_SESSION['start']='yes';
   <head>
     <meta charset="utf-8">
     <title>form</title>
- <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+ <link href="bootstrap.min.css" rel="stylesheet"/>
  <style>
     .col-sm-4, .col-sm-10{
       padding-right:0px;
