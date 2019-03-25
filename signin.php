@@ -68,7 +68,7 @@ $_SESSION['start']='yes';
  <body>
  
  <header>
-    <img src="images/supper gen logo.png" id="logo">
+    <img src="supper gen logo.png" id="logo">
     <h1>Simplify your supper planning</h1>
     <p>Enter your favorite suppers and ingredients, then the program will choose 1-10 suppers for you and display a printable menu and shopping list</p>
     <input type="button"style="width:150px; height:50px;" class="btn btn-primary" value="Demo Pictures" onclick="window.location.href='demo.php'" > 
@@ -101,10 +101,10 @@ $_SESSION['start']='yes';
     <div id="msg">
     </div>
     <div id="P">
-        <img src="images/o.jpg">
-        <img src="images/th (1).jpg">  
-        <img src="images/calzone.jpg">  
-        <img src="images/th.jpg">
+        <img src="o.jpg">
+        <img src="th (1).jpg">  
+        <img src="calzone.jpg">  
+        <img src="th.jpg">
     </div>
 </form> 
     <div id="div">
