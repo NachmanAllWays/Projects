@@ -1,8 +1,10 @@
 <?php
-
-$cs = "mysql:host=localhost;dbname=suppers";
-    $user = "seforim";
-    $passwordd = '1234';         //not using include db.php because need to have $passwordd, password is used in select statement
+$cs="mysql:host=us-cdbr-iron-east-03.cleardb.net;dbname=heroku_772f7bcedc89412"
+$user="bed585af83e3c6"
+$password = "dccce2d4"
+// $cs = "mysql:host=localhost;dbname=suppers";
+//     $user = "seforim";
+//     $passwordd = '1234';         //not using include db.php because need to have $passwordd, password is used in select statement
     if(!empty($name)&&!empty($password)){
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
