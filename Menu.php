@@ -160,7 +160,7 @@ h1,p{
               </select>
             </div>
         </div>
-        <script src="/jquery-3.2.1.min.js"></script>
+        <script src="jquery-3.2.1.min.js"></script>
         <script>
         //when user selects option, posts the option to same page to be stored in a sessions variable
         $('select').on('change',function(){
@@ -186,7 +186,7 @@ h1,p{
     <p>chicken :chicken, ducksauce ,potatoes, onions, carrots </p><button id="chicken">ADD</button>
  </div>
 
-<script src="/jquery-3.2.1.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
 <script>
 //when user clicks add button, posts the selected supper id to add.php using ajax
     $('button').click(function(){
