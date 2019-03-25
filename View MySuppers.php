@@ -21,7 +21,7 @@ try{
   <head>
     <meta charset="utf-8">
     <title>supper form</title>
-    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="bootstrap.min.css" rel="stylesheet"/>
  <style>
 h1{
     text-align:center;
@@ -61,7 +61,7 @@ h1{
 endforeach ?>
 </table>
 
-<script src="/jquery-3.2.1.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
 <script>
     $('button').click(function(){
         console.log(this.id);
