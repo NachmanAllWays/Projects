@@ -12,8 +12,8 @@
   </head>
  <body>
 <h1>Demo Pictures</h1>
-<img src="images/Screenshot 2017.png">
+<img src="Screenshot 2017.png">
 <br>
 <br>
-<img src="images/Screenshot 2017-2.png">
+<img src="Screenshot 2017-2.png">
  </body>
