@@ -33,14 +33,13 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
   <head>
     <meta charset="utf-8">
     <title>supper form</title>
- <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+ <link href="bootstrap.min.css" rel="stylesheet" media="screen"/>
  <link href="print.css" rel="stylesheet" media="print"/>
  <style>
  @media print {
      #list{
          display:none;
      }
-     
  }
  body{
      background-color:lightblue;
@@ -48,8 +47,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
  #list{ 
  }
  #list ul{
-     display:block;
-     
+     display:block; 
  }
  
 h1{
@@ -87,15 +85,12 @@ h2{
    width:10%;
     text-align:left;
    
-  
   @media screen and (max-width: 1300px){
       #item2{
           font-size:18px;
           max-width:70%;
       }
   }*/
-  
-
  </style>
  </head>
 <body>
@@ -241,12 +236,11 @@ function printout() {
   </form>
 </div>
 </div>
-<script src="/jquery-3.2.1.min.js"></script> 
+<script src="jquery-3.2.1.min.js"></script> 
 <script>
 //add checked items to list in alphabetical order
 //change php array into js
  var js_array =<?php echo json_encode($list); ?>;
-
 
 //add checked items id to js array
 $(":checkbox").change(function(){
@@ -267,14 +261,7 @@ if($(this).prop("checked") == true){
 
 });
 }
-
-
-
-
 });
-
-
-
 </script>
 </body>
 </html>
