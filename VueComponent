@@ -1,0 +1,40 @@
+<template>
+    <div>
+        <input label="CoLoader Name" v-model="coLoader"></input>
+        <div v-for="(charge, key) in charges" :key="index">
+            <input label="Charge Name" type="text" @input="e => setCharge(e, 'name', index)"></input>
+            <input  label="Amount" type="number" @input="e => setCharge(e, 'amount', index)"></input>
+            <button @click="addCharge">Add A Charge</button>
+        </div>
+        <button @click="submit">Submit</button>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Co-loader',
+    data() {
+        return {
+            charges: [{}],
+            coLoader: '',
+            totalCharges: 0,
+        };
+    },
+    methods: {
+        addCharge() {
+            this.charges.concat({});
+        },
+        setCharge(input, field, index) {
+            return { ...this.charges, ...{ index: { field: input } } };
+            this.totalCharges = this.charges.reduce((acc, amount) => {
+                return acc + amount;
+            });
+        },
+        async submit() {
+            await axios.post(route('co-loader.store'), { charges: this.charges, totalCharges: this.totalCharges });
+        },
+    },
+};
+</script>
+
+<style scoped></style>
