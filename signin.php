@@ -109,18 +109,18 @@ $_SESSION['start']='yes';
 </form> 
     <div id="div">
         <h2>New to Supper Generator? </h2>
-        <h2>Free Trial for 30 Days! </h2>
+<!--        <h2>Free Trial for 30 Days! </h2>-->
         <input type="button"style="width:150px; height:50px;" class="btn btn-primary" value="Sign Up" onclick="window.location.href='registerController.php'" > 
         
         <br>
-        <h2>Subscribe for 3 months for $5 a month!</h2>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="4S3KDTQSQ88JW">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-       
+<!--        <h2>Subscribe for 3 months for $5 a month!</h2>-->
+<!--        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">-->
+<!--            <input type="hidden" name="cmd" value="_s-xclick">-->
+<!--            <input type="hidden" name="hosted_button_id" value="4S3KDTQSQ88JW">-->
+<!--            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
+<!--            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
+<!--        </form>-->
+<!--       -->
       <br>
     </div>
     <footer>

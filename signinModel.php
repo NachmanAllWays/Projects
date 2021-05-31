@@ -35,17 +35,17 @@ if(!empty($password)&&!empty($row)&&!empty($name)){
     if(password_verify($password,$row['password'])) {  
             //check if todays date is less than or equal to customers enddate(from database) and check if customer isn't blocked
             //the date function gets a string, use strotime to convert date string into Unix timestamp, which can be compared numericaly
-            if(strtotime(date("y.m.d"))<=strtotime($row['enddate'])&&$row['blocked']==='NO') {
+//            if(strtotime(date("y.m.d"))<=strtotime($row['enddate'])&&$row['blocked']==='NO') {
                     //allow to use site. set id for customer to his e-mail address. then we will use his id to get this customer's data from database.
                     session_start();
                     $_SESSION['id']=$name;
                     header('Location:Menu.php');
                     exit;
-            }
-            else {               //if enddate has pased, customer needs to renew his payment
-                header('Location:renew.php');
-                exit;
-            }
+//            }
+//            else {               //if enddate has pased, customer needs to renew his payment
+//                header('Location:renew.php');
+//                exit;
+//            }
 
     } else{ ?>
         <script>
