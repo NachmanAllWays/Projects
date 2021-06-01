@@ -40,7 +40,7 @@
 
 <body>
 <h1>Supper Generator</h1>
-<h1>Register for 30 Days</h1>
+<h1>Register</h1>
 
 <div id="a"> 
 <form action="" method="post">
