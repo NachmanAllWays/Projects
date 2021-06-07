@@ -31,10 +31,13 @@ $ing7=getval("ing7");
 $supperType = getVal("supperType");
 
 $id=$_SESSION['id'];
-//set days to value of selected option
-if(isset($_POST['days'])){
-    $_SESSION['days']=$_POST['days'];
+//set amount dairy/meat to value of selected option
+foreach (['amount_dairy','amount_meat'] as $type) {
+    if (isset($_POST[$type])) {
+        $_SESSION[$type] = $_POST[$type];
+    }
 }
+
 
 
 
@@ -151,9 +154,9 @@ h1,p{
              <br>
              <br>
  <form action="" method="post">
-        <label  class="col-sm-2" >Number of Suppers to Pick</label>
+        <label  class="col-sm-2" >Number of Milchig Suppers to Pick</label>
         <div class="col-sm-2">
-            <select id="days" name="days" >
+            <select id="amount_dairy" name="amount_dairy" >
                 <option>0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -167,18 +170,38 @@ h1,p{
                 <option value="10">10</option>
               </select>
             </div>
+     <label  class="col-sm-2" >Number of Fleishig Suppers to Pick</label>
+     <div class="col-sm-2">
+         <select id="amount_meat" name="amount_meat" >
+             <option>0</option>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+             <option value="10">10</option>
+         </select>
+     </div>
         </div>
         <script src="jquery-3.2.1.min.js"></script>
         <script>
         //when user selects option, posts the option to same page to be stored in a sessions variable
-        $('select').on('change',function(){
-
-             $.post("Menu.php",{days:this.value},function(){
+        $('amount_dairy').on('change',function(){
+             $.post("Menu.php",{amount_dairy:this.value},function(){
             }).fail(function (xhr, statusCode, statusText) {
             alert("error: " + statusText);
         });
         });
-         //<button type="submit" class="btn btn-primary" style="width:200px; height:70px;" name="submit" id="submit" > Select Number</button>
+        $('amount_meat').on('change',function(){
+            $.post("Menu.php",{amount_meat:this.value},function(){
+            }).fail(function (xhr, statusCode, statusText) {
+                alert("error: " + statusText);
+            });
+        });
         </script>
          <br>
           <input type="button"style="margin-left:250px; width:200px; height:75px;" value="Pick Suppers" onclick="window.location.href='PickSuppers.php'" > 
