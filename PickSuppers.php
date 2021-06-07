@@ -1,24 +1,29 @@
 <?php
 session_start();
 $id="";
-$days=5;   //default is 5 days
+$amount_dairy=2;   //default is 5 days
+$amount_meat =3;
 $i=0;
 
 $id=$_SESSION['id'];
-if(isset($_SESSION['days'])){
-    $days=$_SESSION['days'];
+foreach ([$amount_dairy,$amount_meat] as $type) {
+    if (isset($_POST[$type])) {
+        $type = $_SESSION[$type];
+    }
 }
+
 include 'db.php';
 try{      //picks randomly  suppers from this customers suppers. the customer is identified by his e-mail which is stored in $_SESSION['id']
-        
+        //change stored procedure
          //stored procedure get_menu takes two variables get_menu(days, id)  . procedure executes query "SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? ORDER BY RAND() LIMIT ? ";
        
         //calling stored procedure
          $db = new PDO($cs, $user, $password, $options);
-        $query='CALL get_Menu(?,?)';
+        $query='CALL get_Menu(?,?,?)';
         $statement = $db->prepare($query);
-        $statement->bindParam(1, $days);
-        $statement->bindParam(2,$id);
+        $statement->bindParam(1, $amount_dairy);
+        $statement->bindParam(2, $amount_meat);
+        $statement->bindParam(3,$id);
         //execute stored procedure
         $statement->execute();
         $suppers = $statement->fetchAll();
