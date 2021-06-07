@@ -8,6 +8,7 @@ $ing4="";
 $ing5="";
 $ing6="";
 $ing7="";
+$supperType ="";
 $id="";
 //a great function. you don't have to write a seperate code for each variable
 function getval($val){
@@ -27,6 +28,7 @@ $ing4=getval("ing4");
 $ing5=getval("ing5");
 $ing6=getval("ing6");
 $ing7=getval("ing7");
+$supperType = getVal("supperType");
 
 $id=$_SESSION['id'];
 //set days to value of selected option
@@ -39,7 +41,7 @@ if(isset($_POST['days'])){
 if(isset($_POST['submit'])&&isset($ing1)){
     include 'db.php';
     try{
-        $insert="INSERT INTO menu (name, ing1,ing2,ing3,ing4,person,ing5,ing6,ing7) VALUES(?,?,?,?,?,?,?,?,?)";
+        $insert="INSERT INTO menu (name, ing1,ing2,ing3,ing4,person,ing5,ing6,ing7,supper_type) VALUES(?,?,?,?,?,?,?,?,?,?)";
         $statement=$db->prepare($insert);
         $statement->bindParam(1,$name);
         $statement->bindParam(2,$ing1);
@@ -50,6 +52,7 @@ if(isset($_POST['submit'])&&isset($ing1)){
         $statement->bindParam(7,$ing5);
         $statement->bindParam(8,$ing6);
         $statement->bindParam(9,$ing7);
+        $statement->bindParam(10,$supperType);
         $statement->execute();
     }catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
@@ -136,6 +139,11 @@ h1,p{
             <input type="text"  class="form-control" id="ing7" name="ing7" placeholder=""  >
         </div>
     </div>
+    <input type="radio" id="is_dairy" name="supperType" value="is_dairy">
+    <label>Milchig</label>
+    <br>
+    <input type="radio" id="is_meat" name="supperType" value="is_meat">
+    <label>Fleishig</label>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary" style="width:300px; height:70px;" name="submit" id="submit" > Save Your Supper In Database</button>
@@ -182,7 +190,7 @@ h1,p{
     <h1>Suggested Suppers</h1>
     <p>deli-salad: deli, lettuce,tomatoes,avocado,mayonnaise</p> <button id="deli-salad">ADD</button>
     <p>noodles and tuna-fish: noodles, tuna-fish ,ketchup ,cheese, marinara sauce </p><button id="noodles and tuna-fish">ADD</button>
-    <p>shnitzel :chicken breasts ,corn flake crumbs ,mayonnaise, pam, salt </p><button id="shnitzel">ADD</button>
+    <p>shnitzel :chicken breasts ,corn flake crumbs ,mayonnaise</p><button id="shnitzel">ADD</button>
     <p>chicken :chicken, ducksauce ,potatoes, onions, carrots </p><button id="chicken">ADD</button>
  </div>
 
