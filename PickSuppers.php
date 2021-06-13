@@ -14,20 +14,27 @@ foreach ([$amount_dairy,$amount_meat] as $type) {
 
 include 'db.php';
 try{      //picks randomly  suppers from this customers suppers. the customer is identified by his e-mail which is stored in $_SESSION['id']
-        //change stored procedure
-         //stored procedure get_menu takes two variables get_menu(days, id)  . procedure executes query "SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? ORDER BY RAND() LIMIT ? ";
-       
-        //calling stored procedure
+
+         //old stored procedure get_menu takes two variables get_menu(days, id)  . procedure executes query "SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? ORDER BY RAND() LIMIT ? ";
+         // stored procedure getDairySuppers(amount_dairy,id)    procedure executes query "SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? where supper_type = 'dairy' ORDER BY RAND() LIMIT ? "
+        // stored procedure getMeatSuppers(amount_meat,id)
          $db = new PDO($cs, $user, $password, $options);
-        $query='CALL get_Menu(?,?,?)';
+        $query='CALL getDairySuppers(?,?)';
         $statement = $db->prepare($query);
         $statement->bindParam(1, $amount_dairy);
-        $statement->bindParam(2, $amount_meat);
-        $statement->bindParam(3,$id);
-        //execute stored procedure
+        $statement->bindParam(2,$id);
         $statement->execute();
         $suppers = $statement->fetchAll();
         $statement->closeCursor();
+
+    $query='CALL getMeatSuppers(?,?)';
+    $statement = $db->prepare($query);
+    $statement->bindParam(1, $amount_meat);
+    $statement->bindParam(2,$id);
+    $statement->execute();
+    $suppers = array_merge($suppers,$statement->fetchAll());
+    $statement->closeCursor();
+
 }catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
 }

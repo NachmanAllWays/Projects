@@ -142,10 +142,10 @@ h1,p{
             <input type="text"  class="form-control" id="ing7" name="ing7" placeholder=""  >
         </div>
     </div>
-    <input type="radio" id="is_dairy" name="supperType" value="is_dairy">
+    <input type="radio" id="dairy" name="supperType" value="dairy">
     <label>Milchig</label>
     <br>
-    <input type="radio" id="is_meat" name="supperType" value="is_meat">
+    <input type="radio" id="meat" name="supperType" value="meat">
     <label>Fleishig</label>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
