@@ -6,9 +6,12 @@ $amount_meat =2;
 $i=0;
 
 $person=$_SESSION['id'];
-
-        $amount_dairy = $_SESSION['amount_dairy'];
-        $amount_meat = $_SESSION['amount_meat'];
+if(isset($_SESSION['amount_dairy'])) {
+    $amount_dairy = $_SESSION['amount_dairy'];
+}
+if(isset($_SESSION['amount_meat'])) {
+    $amount_meat = $_SESSION['amount_meat'];
+}
 
 
 include 'db.php';
