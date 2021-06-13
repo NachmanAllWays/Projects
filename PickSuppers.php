@@ -19,7 +19,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
          // stored procedure getDairySuppers(amount_dairy,id)    procedure executes query "SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? AND supper_type = 'dairy' ORDER BY RAND() LIMIT ? "
         // stored procedure getMeatSuppers(amount_meat,id)
          $db = new PDO($cs, $user, $password, $options);
-        $query='CALL getDairySuppers(?,?)';
+        $query='CALL GetDairySuppers(?,?)';
         $statement = $db->prepare($query);
         $statement->bindParam(1,$person);
         $statement->bindParam(2, $amount_dairy);
@@ -27,7 +27,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
         $dairySuppers = $statement->fetchAll();
         $statement->closeCursor();
 
-    $query='CALL getMeatSuppers(?,?)';
+    $query='CALL GetMeatSuppers(?,?)';
     $statement = $db->prepare($query);
     $statement->bindParam(1,$person);
     $statement->bindParam(2, $amount_meat);
