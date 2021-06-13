@@ -5,7 +5,7 @@ $id=$_SESSION['id'];
 
 include 'db.php';
 try{
-        $query="SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7 FROM menu WHERE person=? ";
+        $query="SELECT name, ing1,ing2,ing3,ing4,ing5,ing6,ing7,supper_type FROM menu WHERE person=? ";
         $statement = $db->prepare($query);
         $statement->bindParam(1, $id);
         $statement->execute();
@@ -42,6 +42,7 @@ h1{
         <th>Ingredient</th>
         <th>Ingredient</th>
         <th>Ingredient</th>
+        <th>Supper Type</th>
         <th></th>
     </tr>
 <?php foreach($suppers as $supper) : ?>
@@ -55,6 +56,7 @@ h1{
         <td><?php echo $supper['ing5'];?> </td>
         <td><?php echo $supper['ing6'];?> </td>
         <td><?php echo $supper['ing7'];?> </td>
+        <td><?php echo $supper['supper_type'];?> </td>
         <td> <button id="<?php echo $supper['name']?>">DELETE</button></td>
     </tr>
 <?php  
