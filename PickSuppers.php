@@ -6,11 +6,10 @@ $amount_meat =2;
 $i=0;
 
 $person=$_SESSION['id'];
-foreach ([$amount_dairy,$amount_meat] as $type) {
-    if (isset($_POST[$type])) {
-        $type = $_SESSION[$type];
-    }
-}
+
+        $amount_dairy = $_SESSION['amount_dairy'];
+        $amount_meat = $_SESSION['amount_meat'];
+
 
 include 'db.php';
 try{      //picks randomly  suppers from this customers suppers. the customer is identified by his e-mail which is stored in $_SESSION['id']

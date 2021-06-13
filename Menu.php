@@ -83,6 +83,9 @@ h1,p{
     text-align:center;
     margin-left:400px;
 }
+.pick{
+    margin-left: 20px;
+}
 
 
  </style>
@@ -153,7 +156,7 @@ h1,p{
  </form>
              <br>
              <br>
- <form action="" method="post">
+ <form action="" method="post" class="pick">
         <label  class="col-sm-2" >Number of Milchig Suppers to Pick</label>
         <div class="col-sm-2">
             <select id="amount_dairy" name="amount_dairy" >
