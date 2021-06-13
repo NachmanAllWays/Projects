@@ -1,11 +1,11 @@
 <?php
 session_start();
-$id="";
-$amount_dairy=2;   //default is 5 days
-$amount_meat =3;
+$person="";
+$amount_dairy=2;   //default is 4 days
+$amount_meat =2;
 $i=0;
 
-$id=$_SESSION['id'];
+$person=$_SESSION['id'];
 foreach ([$amount_dairy,$amount_meat] as $type) {
     if (isset($_POST[$type])) {
         $type = $_SESSION[$type];
