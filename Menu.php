@@ -156,6 +156,7 @@ h1,p{
  </form>
              <br>
              <br>
+<div class="pick">
  <form action="" method="post" >
         <label  class="col-sm-2" >Number of Milchig Suppers to Pick</label>
         <div class="col-sm-2">
@@ -189,6 +190,8 @@ h1,p{
              <option value="10">10</option>
          </select>
      </div>
+ </form>
+</div>
         </div>
         <script src="jquery-3.2.1.min.js"></script>
         <script>
