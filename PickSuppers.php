@@ -27,7 +27,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
         $dairySuppers = $statement->fetchAll();
         $statement->closeCursor();
 
-    $query='CALL GetMeatSuppers(?,?)';
+    $query='CALL GetMyMeatSuppers(?,?)';
     $statement = $db->prepare($query);
     $statement->bindParam(1,$person);
     $statement->bindParam(2, $amount_meat);
