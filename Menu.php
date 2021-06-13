@@ -84,7 +84,7 @@ h1,p{
     margin-left:400px;
 }
 .pick{
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 
@@ -145,10 +145,10 @@ h1,p{
             <input type="text"  class="form-control" id="ing7" name="ing7" placeholder=""  >
         </div>
     </div>
-    <input type="radio" id="dairy" name="supperType" value="dairy">
+    <input type="radio" id="dairy" name="supperType" value="dairy" class="pick">
     <label>Milchig</label>
     <br>
-    <input type="radio" id="meat" name="supperType" value="meat">
+    <input type="radio" id="meat" name="supperType" value="meat" class="pick">
     <label>Fleishig</label>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
@@ -156,7 +156,7 @@ h1,p{
  </form>
              <br>
              <br>
- <form action="" method="post" class="pick">
+ <form action="" method="post" >
         <label  class="col-sm-2" >Number of Milchig Suppers to Pick</label>
         <div class="col-sm-2">
             <select id="amount_dairy" name="amount_dairy" >
