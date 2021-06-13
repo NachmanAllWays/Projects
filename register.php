@@ -58,20 +58,13 @@
       <input type="password"  class="form-control" id="password" name="password" placeholder="" >
     </div>
   </div>
-  
   <br>
   <br>
-  
   <div class="form-group">
-  
         <div class="col-sm-4">
             <button style="height:75px; width:120px;" type="submit"  id="submit" class="btn btn-primary"  >Register</button>
-
         </div>
     </div>
-   
-    
-    
     <div id="P">
 <img src="o.jpg">
 <img src="th.jpg">  
