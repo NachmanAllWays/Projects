@@ -193,13 +193,13 @@ h1,p{
         <script src="jquery-3.2.1.min.js"></script>
         <script>
         //when user selects option, posts the option to same page to be stored in a sessions variable
-        $('amount_dairy').on('change',function(){
+        $('#amount_dairy').on('change',function(){
              $.post("Menu.php",{amount_dairy:this.value},function(){
             }).fail(function (xhr, statusCode, statusText) {
             alert("error: " + statusText);
         });
         });
-        $('amount_meat').on('change',function(){
+        $('#amount_meat').on('change',function(){
             $.post("Menu.php",{amount_meat:this.value},function(){
             }).fail(function (xhr, statusCode, statusText) {
                 alert("error: " + statusText);
