@@ -24,7 +24,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
         $statement->bindParam(1,$person);
         $statement->bindParam(2, $amount_dairy);
         $statement->execute();
-        $suppers = $statement->fetchAll();
+        $dairySuppers = $statement->fetchAll();
         $statement->closeCursor();
 
     $query='CALL getMeatSuppers(?,?)';
@@ -32,7 +32,7 @@ try{      //picks randomly  suppers from this customers suppers. the customer is
     $statement->bindParam(1,$person);
     $statement->bindParam(2, $amount_meat);
     $statement->execute();
-    $suppers = array_merge($suppers,$statement->fetchAll());
+    $meatSuppers = $statement->fetchAll();
     $statement->closeCursor();
 
 }catch(PDOException $e) {
@@ -121,7 +121,9 @@ h2{
         <th>Ingredient</th>
         <th>Ingredient</th>
     </tr>
- <?php foreach($suppers as $supper) :
+ <?php
+ $suppers = array_merge($dairySuppers,$meatSuppers);
+ foreach($suppers as $supper) :
     echo "<tr>";
         $i++;
         echo '<td>'.'Day '.$i.'<td>';  
