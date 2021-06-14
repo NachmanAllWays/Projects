@@ -86,6 +86,9 @@ h1,p{
 .pick{
     margin-left: 60px;
 }
+.header{
+    text-align:none;
+}
 
 
  </style>
@@ -146,7 +149,7 @@ h1,p{
         </div>
     </div>
     <div class="pick">
-    <h1>Select Milchig or Fleishig</h1>
+    <h1 class="header">Select Milchig or Fleishig</h1>
     <input type="radio" id="dairy" name="supperType" value="dairy" class="pick">
     <label>Milchig</label>
     <br>
