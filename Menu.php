@@ -145,18 +145,20 @@ h1,p{
             <input type="text"  class="form-control" id="ing7" name="ing7" placeholder=""  >
         </div>
     </div>
+    <div class="pick">
+    <h1>Select Milchig or Fleishig</h1>
     <input type="radio" id="dairy" name="supperType" value="dairy" class="pick">
     <label>Milchig</label>
     <br>
     <input type="radio" id="meat" name="supperType" value="meat" class="pick">
     <label>Fleishig</label>
+    </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary" style="width:300px; height:70px;" name="submit" id="submit" > Save Your Supper In Database</button>
  </form>
              <br>
              <br>
-<div class="pick">
  <form action="" method="post" >
         <label  class="col-sm-2" >Number of Milchig Suppers to Pick</label>
         <div class="col-sm-2">
