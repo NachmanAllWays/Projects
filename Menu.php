@@ -87,7 +87,7 @@ h1,p{
     margin-left: 60px;
 }
 .header{
-    text-align:none;
+    text-align:start;
 }
 
 
